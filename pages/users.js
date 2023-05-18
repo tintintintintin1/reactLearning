@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-function UserList({ users }) {
+export default function UserList({ users }) {
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -39,8 +39,6 @@ function UserList({ users }) {
     </main>
   );
 }
-
-export default UserList;
 
 export async function getStaticProps() {
   const res = await fetch(`${process.env.apiUrl}api/hello`);
